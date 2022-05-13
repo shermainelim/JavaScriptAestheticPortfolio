@@ -112,7 +112,7 @@ function getCursorPosition(canvas, event) {
 }
 
 const canvas = document.querySelector("canvas");
-export var xy = "";
+var xy = "";
 canvas.addEventListener("click", function (e) {
   xy = getCursorPosition(canvas, e);
 
