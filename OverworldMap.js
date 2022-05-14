@@ -99,26 +99,6 @@ class OverworldMap {
   }
 }
 
-function getCursorPosition(canvas, event) {
-  const rect = canvas.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-  console.log("x: " + x + " y: " + y);
-  var numericArray = new Array(2);
-  numericArray[0] = x;
-  numericArray[1] = y;
-
-  return numericArray;
-}
-
-const canvas = document.querySelector("canvas");
-var xy = "";
-canvas.addEventListener("click", function (e) {
-  xy = getCursorPosition(canvas, e);
-
-  console.log("xy", xy);
-});
-
 window.OverworldMaps = {
   DemoRoom: {
     id: "DemoRoom",
