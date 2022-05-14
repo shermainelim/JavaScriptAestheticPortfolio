@@ -5,7 +5,6 @@ class Overworld {
     this.ctx = this.canvas.getContext("2d");
     this.map = null;
     this.xy = null;
-    this.flag = false;
   }
 
   startGameLoop(mapConfig) {
@@ -17,10 +16,13 @@ class Overworld {
         const rect = canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
+
+        const scaleX = canvas.width / rect.width; // relationship bitmap vs. element for x
+        const scaleY = canvas.height / rect.height; // relationship bitmap vs. element for y
         console.log("x: " + x + " y: " + y);
         var numericArray = new Array(2);
-        numericArray[0] = x;
-        numericArray[1] = y;
+        numericArray[0] = x * scaleX;
+        numericArray[1] = y * scaleY;
 
         return numericArray;
       }
@@ -32,12 +34,10 @@ class Overworld {
 
       canvas.addEventListener("click", function (e) {
         this.xy = getCursorPosition(canvas, e);
-        this.flag = true;
 
-        cameraPerson.x = utils.withGrid(this.xy[0]);
-        cameraPerson.y = utils.withGrid(this.xy[1]);
+        cameraPerson.x = this.xy[0];
+        cameraPerson.y = this.xy[1];
 
-        console.log(this.flag);
         console.log("xy", this.xy);
       });
 
@@ -153,30 +153,6 @@ class Overworld {
 
     //Kick off the game!
     this.startGameLoop();
-
-    const canvas = document.querySelector("canvas");
-
-    function getCursorPosition(canvas, event) {
-      const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      console.log("x: " + x + " y: " + y);
-      var numericArray = new Array(2);
-      numericArray[0] = x;
-      numericArray[1] = y;
-
-      return numericArray;
-    }
-
-    canvas.addEventListener("click", function (e) {
-      this.xy = getCursorPosition(canvas, e);
-      console.log("click2");
-      this.flag = true;
-      const { hero } = this.map.gameObjects;
-
-      console.log(this.flag);
-      console.log("xy", this.xy[0]);
-    });
 
     // this.map.startCutscene([
     //   { type: "battle", enemyId: "beth" }
