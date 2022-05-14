@@ -235,38 +235,6 @@ window.OverworldMaps = {
         x: utils.withGrid(10),
         y: utils.withGrid(5),
       }),
-      kitchenNpcA: new Person({
-        x: utils.withGrid(9),
-        y: utils.withGrid(5),
-        direction: "up",
-        src: "/images/characters/people/npc8.png",
-        talking: [
-          {
-            events: [
-              {
-                type: "textMessage",
-                text: "** They don't want to talk to you **",
-              },
-            ],
-          },
-        ],
-      }),
-      kitchenNpcB: new Person({
-        x: utils.withGrid(3),
-        y: utils.withGrid(6),
-        src: "/images/characters/people/npc3.png",
-        talking: [
-          {
-            events: [
-              {
-                type: "textMessage",
-                text: "People take their jobs here very seriously.",
-                faceHero: "kitchenNpcB",
-              },
-            ],
-          },
-        ],
-      }),
     },
     cutsceneSpaces: {
       [utils.asGridCoord(5, 10)]: [
@@ -285,51 +253,7 @@ window.OverworldMaps = {
       [utils.asGridCoord(10, 6)]: [
         {
           disqualify: ["SEEN_INTRO"],
-          events: [
-            { type: "addStoryFlag", flag: "SEEN_INTRO" },
-            {
-              type: "textMessage",
-              text: "* You are chopping ingredients on your first day as a Pizza Chef at a famed establishment in town. *",
-            },
-            { type: "walk", who: "kitchenNpcA", direction: "down" },
-            {
-              type: "stand",
-              who: "kitchenNpcA",
-              direction: "right",
-              time: 200,
-            },
-            { type: "stand", who: "hero", direction: "left", time: 200 },
-            { type: "textMessage", text: "Ahem. Is this your best work?" },
-            {
-              type: "textMessage",
-              text: "These pepperonis are completely unstable! The pepper shapes are all wrong!",
-            },
-            {
-              type: "textMessage",
-              text: "Don't even get me started on the mushrooms.",
-            },
-            { type: "textMessage", text: "You will never make it in pizza!" },
-            {
-              type: "stand",
-              who: "kitchenNpcA",
-              direction: "right",
-              time: 200,
-            },
-            { type: "walk", who: "kitchenNpcA", direction: "up" },
-            { type: "stand", who: "kitchenNpcA", direction: "up", time: 300 },
-            { type: "stand", who: "hero", direction: "down", time: 400 },
-            {
-              type: "textMessage",
-              text: "* The competition is fierce! You should spend some time leveling up your Pizza lineup and skills. *",
-            },
-            {
-              type: "changeMap",
-              map: "Street",
-              x: utils.withGrid(5),
-              y: utils.withGrid(10),
-              direction: "down",
-            },
-          ],
+          events: [],
         },
       ],
     },
