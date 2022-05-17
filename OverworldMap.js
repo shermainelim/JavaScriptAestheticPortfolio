@@ -56,7 +56,7 @@ class OverworldMap {
 
   checkForActionCutscene() {
     const hero = this.gameObjects["hero"];
-    const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction);
+    //const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction);
     const match = Object.values(this.gameObjects).find((object) => {
       return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`;
     });
@@ -101,6 +101,31 @@ window.OverworldMaps = {
         isPlayerControlled: true,
         x: utils.withGrid(30),
         y: utils.withGrid(50),
+      }),
+      npcA: new Person({
+        x: utils.withGrid(36),
+        y: utils.withGrid(45),
+        src: "/images/characters/people/cake.png",
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 500 },
+          { type: "stand", direction: "down", time: 500 },
+          { type: "stand", direction: "right", time: 500 },
+          { type: "stand", direction: "up", time: 500 },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "up" },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "** They don't want to talk to you **",
+              },
+            ],
+          },
+        ],
       }),
     },
   },
