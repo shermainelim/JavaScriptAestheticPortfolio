@@ -1,42 +1,44 @@
 :root {
-  --border-color: #291D4D;
-  --dialog-background: #FFF3B4;
+  --border-color: #291d4d;
+  --dialog-background: #fff3b4;
 
-  --menu-background: #FFE8D2;
-  --menu-border-color: #A48465;
-  --menu-font-color: #3A160D;
+  --menu-background: #ffe8d2;
+  --menu-border-color: #a48465;
+  --menu-font-color: #3a160d;
   --menu-selected-background: #7fc2ff;
 }
 
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 body {
   background: #333;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  font-family: 'Ribeye', cursive;
+  overflow: visible;
+  font-family: "Ribeye", cursive;
 }
 .how-to-play {
   position: absolute;
-  left:0; right:0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  text-align:center;
+  text-align: center;
   font-size: 14px;
   color: #fff;
 }
 
 .game-container {
-  position: relative; 
-   background: #d9f4ff;
-  width: 352px;
-  height: 198px;
+  position: relative;
+  background: #d9f4ff;
+  width: 880px;
+  height: 1173px;
   margin: 0 auto;
   outline: 1px solid #fff;
+  margin-top: 10px;
 
-  transform: scale(3) translateY(50%);
+  /* /transform: scale(3) translateY(50%); */
 }
 
 .game-container canvas {

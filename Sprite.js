@@ -11,7 +11,7 @@ class Sprite {
     this.shadow = new Image();
     this.useShadow = true; //config.useShadow || false
     if (this.useShadow) {
-      this.shadow.src = "/images/characters/shadow.png";
+      //this.shadow.src = "/images/characters/shadow.png";
     }
     this.shadow.onload = () => {
       this.isShadowLoaded = true;
@@ -30,22 +30,22 @@ class Sprite {
         [0, 0],
       ],
       "walk-right": [
+        [1, 3],
+        [0, 3],
+        [3, 3],
+        [0, 3],
+      ],
+      "walk-up": [
         [1, 1],
         [0, 1],
         [3, 1],
         [0, 1],
       ],
-      "walk-up": [
+      "walk-left": [
         [1, 2],
         [0, 2],
         [3, 2],
         [0, 2],
-      ],
-      "walk-left": [
-        [1, 3],
-        [0, 3],
-        [3, 3],
-        [0, 3],
       ],
     };
     this.currentAnimation = config.currentAnimation || "idle-down";
@@ -95,7 +95,17 @@ class Sprite {
     const [frameX, frameY] = this.frame;
 
     this.isLoaded &&
-      ctx.drawImage(this.image, frameX * 32, frameY * 32, 32, 32, x, y, 32, 32);
+      ctx.drawImage(
+        this.image,
+        frameX * 50,
+        frameY * 50,
+        50,
+        50,
+        x,
+        y,
+        120,
+        120
+      );
 
     this.updateAnimationProgress();
   }
