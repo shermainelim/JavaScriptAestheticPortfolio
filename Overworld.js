@@ -37,8 +37,6 @@ class Overworld {
 
         cameraPerson.x = this.xy[0];
         cameraPerson.y = this.xy[1];
-
-        console.log("xy", this.xy);
       });
 
       //Update all objects

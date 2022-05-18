@@ -91,6 +91,28 @@ class OverworldMap {
   }
 }
 
+const img1 = document?.querySelector("img1");
+
+img1?.addEventListener("mousedown", clicked, false);
+function clicked(e) {
+  //e.preventDefault();
+  alert("hi");
+}
+// function clicked(e) {
+//   e.preventDefault();
+//   var x = e.clientX;
+//   var y = e.clientY;
+
+//   if (
+//     x > utils.withGrid(36) ||
+//     (x < 1300 && y > utils.withGrid(45)) ||
+//     y > 500
+//   ) {
+//     //780 = 580+(200) <- image width
+//     alert("Hello");
+//   }
+//   alert("x " + x + "y " + y);
+// }
 window.OverworldMaps = {
   Kitchen: {
     id: "Kitchen",

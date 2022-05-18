@@ -40,7 +40,11 @@ body {
 
   /* /transform: scale(3) translateY(50%); */
 }
-
+#img1 {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
 .game-container canvas {
   image-rendering: pixelated;
 }
