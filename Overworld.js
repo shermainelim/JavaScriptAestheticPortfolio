@@ -33,10 +33,31 @@ class Overworld {
       const canvas = document.querySelector("canvas");
 
       const sleep = document?.querySelector(".sleep");
-      //sleep?.addEventListener("mousedown", clicked1, false);
+
       sleep?.addEventListener("mousedown", function (e) {
         cameraPerson.x = 610;
         cameraPerson.y = 370;
+      });
+
+      const city = document?.querySelector(".city");
+
+      city?.addEventListener("mousedown", function (e) {
+        cameraPerson.x = 200;
+        cameraPerson.y = 710;
+      });
+
+      const cityDay = document?.querySelector(".cityDay");
+
+      cityDay?.addEventListener("mousedown", function (e) {
+        cameraPerson.x = 410;
+        cameraPerson.y = 625;
+      });
+
+      const moon = document?.querySelector(".moon");
+
+      moon?.addEventListener("mousedown", function (e) {
+        cameraPerson.x = 520;
+        cameraPerson.y = 750;
       });
 
       canvas.addEventListener("click", function (e) {
