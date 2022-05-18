@@ -269,6 +269,10 @@ html {
   transform: translateY(0);
 }
 
+.trigger {
+  position: absolute;
+}
+
 .modal {
   position: fixed;
   left: 0;

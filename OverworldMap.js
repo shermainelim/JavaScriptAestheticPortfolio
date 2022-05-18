@@ -96,6 +96,7 @@ const music = document?.querySelector(".music");
 
 sleep?.addEventListener("mousedown", clicked1, false);
 music?.addEventListener("mousedown", clicked2, false);
+// city?.addEventListener("mousedown", clicked3, false);
 const soundPlayer = new Audio("/images/characters/people/music.mp3");
 function clicked1(e) {
   e.preventDefault();
@@ -111,6 +112,7 @@ function clicked2(e) {
   soundPlayer.loop = true;
 }
 
+const city = document?.querySelector(".city");
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
 const closeButton = document.querySelector(".close-button");
@@ -125,7 +127,7 @@ function windowOnClick(event) {
   }
 }
 
-trigger.addEventListener("click", toggleModal);
+city.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
