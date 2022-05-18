@@ -113,37 +113,19 @@ class Overworld {
       this.map.addWall(hero.x, hero.y);
     }
 
-    this.progress.mapId = mapConfig.id;
-    this.progress.startingHeroX = this.map.gameObjects.hero.x;
-    this.progress.startingHeroY = this.map.gameObjects.hero.y;
-    this.progress.startingHeroDirection = this.map.gameObjects.hero.direction;
+    // this.progress.mapId = mapConfig.id;
+    // this.progress.startingHeroX = this.map.gameObjects.hero.x;
+    // this.progress.startingHeroY = this.map.gameObjects.hero.y;
+    // this.progress.startingHeroDirection = this.map.gameObjects.hero.direction;
   }
 
   async init() {
     const container = document.querySelector(".game-container");
 
     //Create a new Progress tracker
-    this.progress = new Progress();
-
-    //Show the title screen
-    this.titleScreen = new TitleScreen({
-      progress: this.progress,
-    });
-    const useSaveFile = await this.titleScreen.init(container);
-
-    //Potentially load saved data
-    let initialHeroState = null;
-    if (useSaveFile) {
-      this.progress.load();
-      initialHeroState = {
-        x: this.progress.startingHeroX,
-        y: this.progress.startingHeroY,
-        direction: this.progress.startingHeroDirection,
-      };
-    }
 
     //Start the first map
-    this.startMap(window.OverworldMaps[this.progress.mapId], initialHeroState);
+    this.startMap(window.OverworldMaps["Kitchen"], null);
 
     //Create controls
     this.bindActionInput();
