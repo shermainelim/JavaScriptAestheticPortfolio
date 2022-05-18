@@ -52,11 +52,71 @@ body {
   top: 170px;
 }
 
-#battle {
+#city {
   position: absolute;
   left: 200px;
   top: 615px;
 }
+
+#cityDay {
+  position: absolute;
+  left: 410px;
+  top: 525px;
+}
+
+#moon {
+  position: absolute;
+  left: 500px;
+  top: 660px;
+}
 .game-container canvas {
   image-rendering: pixelated;
+}
+
+/* quick reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  font-family: helvetica, arial, sans-serif;
+}
+
+/* relevant styles */
+.img__wrap {
+  position: absolute;
+}
+
+.img__description_layer {
+  position: absolute;
+  left: 210px;
+  top: 590px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #957dad;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img__wrap:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  transition: 0.2s;
+  transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+  transform: translateY(0);
 }
