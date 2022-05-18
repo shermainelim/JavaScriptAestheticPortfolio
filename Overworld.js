@@ -142,10 +142,6 @@ class Overworld {
       };
     }
 
-    //Load the HUD
-    this.hud = new Hud();
-    this.hud.init(container);
-
     //Start the first map
     this.startMap(window.OverworldMaps[this.progress.mapId], initialHeroState);
 
