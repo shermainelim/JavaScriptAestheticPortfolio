@@ -120,3 +120,77 @@ html {
 .img__wrap:hover .img__description {
   transform: translateY(0);
 }
+
+/* relevant styles */
+.img__wrap_moon {
+  position: absolute;
+}
+
+.img__description_layer_moon {
+  position: absolute;
+  left: 530px;
+  top: 635px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #957dad;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img__wrap_moon:hover .img__description_layer_moon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description_moon {
+  transition: 0.2s;
+  transform: translateY(1em);
+}
+
+.img__wrap_moon:hover .img__description_moon {
+  transform: translateY(0);
+}
+
+/* relevant styles */
+.img__wrap_city {
+  position: absolute;
+}
+
+.img__description_layer_city {
+  position: absolute;
+  left: 425px;
+  top: 500px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #957dad;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img__wrap_city:hover .img__description_layer_city {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description_city {
+  transition: 0.2s;
+  transform: translateY(1em);
+}
+
+.img__wrap_city:hover .img__description_city {
+  transform: translateY(0);
+}
