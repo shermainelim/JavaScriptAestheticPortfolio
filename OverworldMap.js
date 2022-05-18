@@ -91,7 +91,7 @@ class OverworldMap {
   }
 }
 
-const img1 = document?.querySelector("img1");
+const img1 = document?.querySelector(".img1");
 
 img1?.addEventListener("mousedown", clicked, false);
 function clicked(e) {
