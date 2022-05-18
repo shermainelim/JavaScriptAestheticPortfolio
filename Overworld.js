@@ -29,8 +29,15 @@ class Overworld {
 
       //Establish the camera person
       const cameraPerson = this.map.gameObjects.hero;
-      const go = this.map.gameObjects;
+
       const canvas = document.querySelector("canvas");
+
+      const sleep = document?.querySelector(".sleep");
+      //sleep?.addEventListener("mousedown", clicked1, false);
+      sleep?.addEventListener("mousedown", function (e) {
+        cameraPerson.x = 610;
+        cameraPerson.y = 370;
+      });
 
       canvas.addEventListener("click", function (e) {
         this.xy = getCursorPosition(canvas, e);
