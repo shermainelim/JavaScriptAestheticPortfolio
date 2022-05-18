@@ -103,8 +103,8 @@ class Sprite {
         50,
         x,
         y,
-        120,
-        120
+        150,
+        150
       );
 
     this.updateAnimationProgress();
