@@ -91,13 +91,26 @@ class OverworldMap {
   }
 }
 
-const img1 = document?.querySelector(".img1");
+const sleep = document?.querySelector(".sleep");
+const music = document?.querySelector(".music");
 
-img1?.addEventListener("mousedown", clicked, false);
-function clicked(e) {
-  //e.preventDefault();
-  alert("hi");
+sleep?.addEventListener("mousedown", clicked1, false);
+music?.addEventListener("mousedown", clicked2, false);
+const soundPlayer = new Audio("/images/characters/people/music.mp3");
+function clicked1(e) {
+  e.preventDefault();
+  alert("Music stopped");
+  soundPlayer.pause();
+  soundPlayer.currentTime = 0;
 }
+function clicked2(e) {
+  e.preventDefault();
+  alert("Music started");
+
+  soundPlayer.play();
+  soundPlayer.loop = true;
+}
+
 // function clicked(e) {
 //   e.preventDefault();
 //   var x = e.clientX;

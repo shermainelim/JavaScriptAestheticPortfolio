@@ -40,10 +40,22 @@ body {
 
   /* /transform: scale(3) translateY(50%); */
 }
-#img1 {
+#sleep {
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 610px;
+  top: 370px;
+}
+
+#music {
+  position: absolute;
+  left: 500px;
+  top: 170px;
+}
+
+#battle {
+  position: absolute;
+  left: 200px;
+  top: 615px;
 }
 .game-container canvas {
   image-rendering: pixelated;
