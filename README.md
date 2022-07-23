@@ -1,3 +1,7 @@
 # JavaScriptRPG
 
-https://pasteldreams.netlify.app/
+Demo: https://pasteldreams.netlify.app/
+
+Inspiration from : https://danielsternlicht.com/
+
+
